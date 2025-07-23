@@ -1,0 +1,14 @@
+services:
+- type: web
+  name: expense-report-gpt
+  env: python
+  plan: free
+  buildCommand: "pip install -r requirements.txt"
+  startCommand: "python main.py"
+  envVars:
+    - key: EMAIL_USER
+      sync: false
+    - key: EMAIL_PASS
+      sync: false
+    - key: ACCOUNTING_EMAIL
+      sync: false
